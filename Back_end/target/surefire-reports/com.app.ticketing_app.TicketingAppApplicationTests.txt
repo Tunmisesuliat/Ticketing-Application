@@ -1,7 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.app.ticketing_app.TicketingAppApplicationTests
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 73.041 s <<< FAILURE! - in com.app.ticketing_app.TicketingAppApplicationTests
-CreateTicket(com.app.ticketing_app.TicketingAppApplicationTests)  Time elapsed: 0.008 s  <<< ERROR!
-java.lang.IllegalStateException: The @PropertyMapping annotation @AutoConfigureMockMvc cannot be used in combination with the @Component annotation @Configuration
-

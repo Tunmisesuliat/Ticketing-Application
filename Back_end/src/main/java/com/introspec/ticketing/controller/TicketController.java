@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/tickets")
 public class TicketController {
 	
 	private final TicketService ticketService;
@@ -25,27 +26,27 @@ public class TicketController {
 		this.ticketService = ticketService;
 	}
 	
-	@GetMapping("/tickets")
+	@GetMapping("")
 	public Page<Ticket> getAllTicket(Pageable pageable){
 		return ticketService.getAllTicket(pageable);
 	}
 
-	@GetMapping("/tickets/{id}")
+	@GetMapping("/{id}")
 	public Ticket getTicket(@PathVariable Long id){	
 		return ticketService.getTicket(id).get();
 	}
 	
-	@PostMapping("/tickets")
+	@PostMapping("")
 	public Ticket addTicket(@RequestBody Ticket ticket ){
 		return ticketService.addTicket(ticket);
 	}
 	
 	//we won't be using the next two, but keeping this as references for such when needed.
-	@PutMapping("/tickets/{id}")
+	@PutMapping("/{id}")
 	public Ticket updateTicket(@PathVariable Long id, @RequestBody Ticket updatedTicket){
 		return ticketService.updateTicket(id, updatedTicket);
 	}
-	@RequestMapping(value="/tickets/{id}", method=RequestMethod.DELETE)
+	@RequestMapping(value="/{id}", method=RequestMethod.DELETE)
 	public void deleteTicket(@PathVariable Long id){
 		ticketService.deleteTicket(id);
 	}

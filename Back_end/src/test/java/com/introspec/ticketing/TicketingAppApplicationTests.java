@@ -27,8 +27,8 @@ public class TicketingAppApplicationTests {
 		ticket.setAmount(120.90);
 		ticket.setChannel("NTA");
 		ticket.setTerminalId(12346l);
-		ticket.setCreatedAt(new Date());
-		ticket.setUpdatedAt(new Date());
+		//ticket.setCreatedAt(new Date());
+		//ticket.setUpdatedAt(new Date());
 		
 		ticketRepo.save(ticket);
 	}

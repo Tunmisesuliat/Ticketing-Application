@@ -7,11 +7,13 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import org.springframework.format.annotation.DateTimeFormat;
 import lombok.Data;
 
 @Entity
 @Data
+@EntityListeners(AuditingEntityListener.class)
 @JsonIgnoreProperties(
 	value = {"createdAt", "updatedAt"},
 	allowGetters = true
@@ -30,8 +32,8 @@ public class Ticket {
 	@DateTimeFormat(pattern="yyy-MM-dd'T'HH:mm:ss")
 	@Column(nullable=false, updatable=false)
 	@CreatedDate
-	private Date createdAt = new Date();
+	private Date createdAt;
 	@Column(nullable=false)
 	@LastModifiedDate
-	private Date updatedAt = new Date();
+	private Date updatedAt;
 }

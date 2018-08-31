@@ -33,7 +33,7 @@ Using Maven directly, you could do the following
 ```
 mvn clean package
 
-java -jar target/ticketing-0.0.1.jar -Ddbpassword=xxxxxx -Ddbuser=xxxxx
+java -jar target/ticketing-0.0.1.jar --dbpassword=xxxxxx --dbuser=xxxxx
 ```
 
 
